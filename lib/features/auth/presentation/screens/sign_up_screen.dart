@@ -112,6 +112,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               labelName: "First Name",
                               controller: _firstNameController,
                               hintText: "First Name",
+                              isMandotary: true,
                               labelTextStyle: kInputFieldLabelLighterText,
                               padding:
                                   const EdgeInsets.only(left: 8, bottom: 8),
@@ -123,6 +124,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               labelName: "Last Name",
                               controller: _lastNameController,
                               hintText: "Last Name",
+                              isMandotary: true,
                               labelTextStyle: kInputFieldLabelLighterText,
                               padding:
                                   const EdgeInsets.only(left: 8, bottom: 8),
@@ -134,6 +136,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               labelName: "Email",
                               controller: _emailController,
                               hintText: "Email",
+                              isMandotary: true,
                               labelTextStyle: kInputFieldLabelLighterText,
                               padding:
                                   const EdgeInsets.only(left: 8, bottom: 8),
@@ -143,6 +146,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             labelName: "Mobile Number",
                             controller: _mobileNoController,
                             hintText: "Mobile Number",
+                            isMandotary: true,
                             labelTextStyle: kInputFieldLabelLighterText,
                             padding: const EdgeInsets.only(left: 8, bottom: 8),
                           ),
@@ -154,6 +158,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               hintText: "Enter strong password",
                               labelTextStyle: kInputFieldLabelLighterText,
                               obscureText: true,
+                              isMandotary: true,
                               padding:
                                   const EdgeInsets.only(left: 8, bottom: 8),
                             ),
@@ -166,6 +171,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               hintText: "Re enter your password",
                               labelTextStyle: kInputFieldLabelLighterText,
                               obscureText: true,
+                              isMandotary: true,
                               padding:
                                   const EdgeInsets.only(left: 8, bottom: 8),
                             ),
