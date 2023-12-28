@@ -50,9 +50,8 @@ class _EditContactScreenState extends State<EditContactScreen> {
     return BlocListener<ContactManagerCubit, ContactManagerState>(
       listener: (context, state) async {
         if (state is ContactCrudOptSuccess) {
-          await Future.delayed(const Duration(seconds: 3), () {
-            Navigator.pop(context);
-          });
+          Navigator.pop(context);
+          // await Future.delayed(const Duration(seconds: 1), () {});
         }
       },
       child: SafeArea(
@@ -237,10 +236,12 @@ class _EditContactScreenState extends State<EditContactScreen> {
   void saveContact(context) async {
     await BlocProvider.of<ContactManagerCubit>(context).uploadConatct(
         entity: ContactEntity(
+            // id: widget.contactEntity.id,
+            createdDate: widget.contactEntity.createdDate,
+            createdUser: widget.contactEntity.createdUser,
             firstName: _firstNameController.text,
             lastName: _lastNameController.text,
             email: _emailController.text,
-            mobile: _mobileNoController.text,
-            imagePath: _mobileNoController.text));
+            mobile: _mobileNoController.text));
   }
 }

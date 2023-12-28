@@ -6,7 +6,6 @@ import 'package:contactsbuddy/features/contact_mannager/domain/usecase/update_co
 import 'package:contactsbuddy/features/contact_mannager/domain/usecase/upload_conatct_usecase.dart';
 import 'dart:developer' as dev;
 import 'package:equatable/equatable.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -28,12 +27,37 @@ class ContactManagerCubit extends Cubit<ContactManagerState> {
       : super(ContactManagerInitial());
 
   String errorMsg = "";
+  String searchTearm = "";
   void disposeState() {}
+
+  void searchTextChange(String val) {
+    searchTearm = val;
+  }
 
   Future<void> uploadConatct({required ContactEntity entity}) async {
     emit(ContactCrudOptInitiate());
     try {
       bool result = await uploadConatctUsecase.call(entity);
+      if (result) {
+        emit(ContactCrudOptSuccess());
+      } else {
+        emit(ContactCrudOptFailed());
+      }
+    } on DatabaseException catch (e, stacktrace) {
+      emit(ContactCrudOptFailed());
+      dev.log(e.toString(), name: "ERROR", stackTrace: stacktrace);
+    } catch (e, stacktrace) {
+      final error = e.toString();
+      errorMsg = error;
+      emit(ContactCrudOptFailed());
+      dev.log(e.toString(), name: "ERROR", stackTrace: stacktrace);
+    }
+  }
+
+  Future<void> updateConatct({required ContactEntity entity}) async {
+    emit(ContactCrudOptInitiate());
+    try {
+      bool result = await updateConatctUsecase.call(entity);
       if (result) {
         emit(ContactCrudOptSuccess());
       } else {

@@ -110,9 +110,14 @@ class ContactManagerDataSourceImpl extends ContactManagerLocalDataSource {
       createdUser: entity.createdUser,
     );
 
-    int id = await db.update(DbTables.contacts, model.toJson());
+    int id = await db.update(
+      DbTables.contacts,
+      model.toJson(),
+      where: '${ContactsFields.id} = ?',
+      whereArgs: [entity.id],
+    );
     if (id == 0) {
-      throw Exception("Contact Data update failed");
+      return false;
     } else {
       return true;
     }

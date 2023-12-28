@@ -1,4 +1,3 @@
-import 'package:contactsbuddy/features/auth/domain/entities/user_entity.dart';
 import 'package:contactsbuddy/features/contact_mannager/data/data_sources/local/contact_manager_local_data_source.dart';
 import 'package:contactsbuddy/features/contact_mannager/domain/entities/contact_entity.dart';
 import 'package:contactsbuddy/features/contact_mannager/domain/repository/contact_manager_repository.dart';

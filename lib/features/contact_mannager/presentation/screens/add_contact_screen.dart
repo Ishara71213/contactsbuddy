@@ -3,7 +3,6 @@ import 'package:contactsbuddy/core/components/input_field_with_lable.dart';
 import 'package:contactsbuddy/core/components/mobile_input_field_with_lable.dart';
 import 'package:contactsbuddy/core/enum/states.dart';
 import 'package:contactsbuddy/core/widgets/button_widgets/button_widgets_library.dart';
-import 'package:contactsbuddy/features/auth/presentation/bloc/user/cubit/user_cubit.dart';
 import 'package:contactsbuddy/features/contact_mannager/domain/entities/contact_entity.dart';
 import 'package:contactsbuddy/features/contact_mannager/presentation/bloc/bloc/contact_Manager/contact_manager_cubit.dart';
 import 'package:flutter/material.dart';
@@ -40,9 +39,8 @@ class _AddContactScreenState extends State<AddContactScreen> {
     return BlocListener<ContactManagerCubit, ContactManagerState>(
       listener: (context, state) async {
         if (state is ContactCrudOptSuccess) {
-          await Future.delayed(const Duration(seconds: 3), () {
-            Navigator.pop(context);
-          });
+          Navigator.pop(context);
+          // await Future.delayed(const Duration(seconds: 1), () {});
         }
       },
       child: SafeArea(

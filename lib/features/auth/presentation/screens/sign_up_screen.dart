@@ -6,7 +6,6 @@ import 'package:contactsbuddy/core/components/mobile_input_field_with_lable.dart
 import 'package:contactsbuddy/core/enum/states.dart';
 import 'package:contactsbuddy/core/utils/navigation_handler.dart';
 import 'package:contactsbuddy/core/widgets/button_widgets/button_widgets_library.dart';
-import 'package:contactsbuddy/features/auth/presentation/bloc/auth/cubit/auth_cubit.dart';
 import 'package:contactsbuddy/features/auth/presentation/bloc/user/cubit/user_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
