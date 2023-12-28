@@ -93,4 +93,26 @@ class AuthUserLocalDataSourceImpl extends AuthUserLocalDataSource {
       throw Exception('Email ${user.email} not found');
     }
   }
+
+  @override
+  Future<UserEntity> updateUserData(UserEntity entity) async {
+    UserModel model = UserModel(
+      firstName: entity.firstName,
+      lastName: entity.lastName,
+      email: entity.email,
+      mobile: entity.mobile,
+      password: entity.password,
+    );
+
+    String? signedInUser =
+        await secureStorage.read(key: StorageKeys.signedInUserId);
+    if (signedInUser == "" || signedInUser == null) {
+      throw Exception("Invalid User");
+    }
+    int id = await db.update(DbTables.users, model.toJson());
+    if (id == 0) {
+      throw Exception("User Data update failed");
+    }
+    return model;
+  }
 }

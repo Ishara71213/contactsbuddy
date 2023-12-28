@@ -17,7 +17,7 @@ class NavigationHandler {
     }
   }
 
-  void navigateWithArgumnets(
+  static void navigateWithArgumnets(
       BuildContext context, String path, Map<String, dynamic> args) {
     String? previousRouteName =
         ModalRoute.of(context)?.settings.name.toString();

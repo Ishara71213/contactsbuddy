@@ -2,6 +2,7 @@ import 'package:contactsbuddy/config/routes/on_generate_route.dart';
 import 'package:contactsbuddy/config/routes/route_const.dart';
 import 'package:contactsbuddy/features/auth/presentation/bloc/auth/cubit/auth_cubit.dart';
 import 'package:contactsbuddy/features/auth/presentation/bloc/user/cubit/user_cubit.dart';
+import 'package:contactsbuddy/features/contact_mannager/presentation/bloc/bloc/contact_Manager/contact_manager_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:contactsbuddy/core/utils/injection_container.dart' as di;
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,6 +23,8 @@ class ContactsBuddy extends StatelessWidget {
         BlocProvider<AuthCubit>(
             create: (_) => di.sl<AuthCubit>()..appStarted()),
         BlocProvider<UserCubit>(create: (_) => di.sl<UserCubit>()),
+        BlocProvider<ContactManagerCubit>(
+            create: (_) => di.sl<ContactManagerCubit>()),
       ],
       child: const MaterialApp(
         title: 'Contacts Buddy',

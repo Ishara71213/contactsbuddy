@@ -72,7 +72,6 @@ class UserCubit extends Cubit<UserState> {
         return;
       }
       await signUpUsecase.call(user);
-      userData = await getCurrentUserByUidUsecase();
       emit(UserSuccess());
     } on DatabaseException catch (e, stacktrace) {
       emit(UserFailrue());

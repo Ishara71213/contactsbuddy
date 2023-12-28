@@ -7,4 +7,5 @@ abstract class AuthUserRepository {
   Future<void> signOut();
   Future<int> getCurrentUId();
   Future<UserEntity> getCurrentUserById();
+  Future<UserEntity> updateUserData(UserEntity entity);
 }

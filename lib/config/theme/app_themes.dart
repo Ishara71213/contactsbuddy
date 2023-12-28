@@ -18,6 +18,8 @@ Color kGreyMediumShade = const Color(0xFF888888);
 Color kDarkGreyShade = const Color(0xFF444444);
 Color kDarkerGreyShade = const Color(0xFF363333);
 
+Color kAppBarBorder = const Color(0xFFE3E3E3);
+
 Color kSuccessColor = const Color(0xFF189516);
 Color kWarnningColor = const Color(0XFFF5B14B);
 Color kErrorColor = const Color(0XFFD1212C);
@@ -44,11 +46,23 @@ TextStyle kBlackHeaddertextStyle = GoogleFonts.roboto(
   color: kBlackColor,
 );
 
+TextStyle kContactTextStyle = GoogleFonts.roboto(
+  fontSize: 18,
+  fontWeight: FontWeight.w500,
+  color: kDarkGreyShade,
+);
+
 TextStyle kGreyBodytextStyle = GoogleFonts.roboto(
   fontSize: 16,
   fontWeight: FontWeight.w400,
   color: kGreyColor,
 );
+
+TextStyle kWarningTextButtonText = GoogleFonts.roboto(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    color: kErrorColor,
+    letterSpacing: 0.2);
 
 //Input Field Text styles
 TextStyle kInputFieldText = GoogleFonts.roboto(

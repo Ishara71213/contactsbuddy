@@ -4,6 +4,8 @@ import 'package:contactsbuddy/core/common/screens/splash_screen_data_loader.dart
 import 'package:contactsbuddy/features/auth/presentation/bloc/auth/cubit/auth_cubit.dart';
 import 'package:contactsbuddy/features/auth/presentation/screens/sign_in_screen.dart';
 import 'package:contactsbuddy/features/auth/presentation/screens/sign_up_screen.dart';
+import 'package:contactsbuddy/features/contact_mannager/presentation/screens/add_contact_screen.dart';
+import 'package:contactsbuddy/features/contact_mannager/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -27,7 +29,10 @@ class OnGenerateRoute {
         return materialBuilderAuthScreens(
             widget: const SignUpScreen(), route: routeName);
       case RouteConst.homeScreen:
-        return materialBuilder(widget: const SignInScreen(), route: routeName);
+        return materialBuilder(widget: const HomeScreen(), route: routeName);
+      case RouteConst.addContactScreen:
+        return materialBuilder(
+            widget: const AddContactScreen(), route: routeName);
       //error page
       default:
         return MaterialPageRoute(builder: (context) => const ErrorPage());

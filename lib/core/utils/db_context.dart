@@ -26,7 +26,7 @@ class DbContext {
     const String idType = 'INTEGER PRIMARY KEY AUTOINCREMENT';
     const String textType = 'TEXT NOT NULL';
     //const String boolType = 'BOOLEAN NOT NULL';
-    //const String integerType = 'INTEGER NOT NULL';
+    const String integerType = 'INTEGER NOT NULL';
 
     await db.execute('''
           CREATE TABLE ${DbTables.users} (
@@ -39,6 +39,19 @@ class DbContext {
             ${UsersFields.gender} $textType,
             ${UsersFields.password} $textType,
             ${UsersFields.imagePath} $textType
+          )
+    ''');
+
+    await db.execute('''
+          CREATE TABLE ${DbTables.contacts} (
+            ${ContactsFields.id} $idType,
+            ${ContactsFields.firstName} $textType,
+            ${ContactsFields.lastName} $textType,
+            ${ContactsFields.email} $textType,
+            ${ContactsFields.mobile} $textType,
+            ${ContactsFields.imagePath} $textType,
+            ${ContactsFields.createdDate} $textType,
+            ${ContactsFields.createdUser} $integerType
           )
     ''');
   }
