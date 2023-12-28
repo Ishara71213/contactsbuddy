@@ -234,7 +234,7 @@ class _EditContactScreenState extends State<EditContactScreen> {
   }
 
   void saveContact(context) async {
-    await BlocProvider.of<ContactManagerCubit>(context).uploadConatct(
+    await BlocProvider.of<ContactManagerCubit>(context).updateConatct(
         entity: ContactEntity(
             // id: widget.contactEntity.id,
             createdDate: widget.contactEntity.createdDate,
