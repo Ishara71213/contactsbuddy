@@ -202,7 +202,7 @@ class _AddContactScreenState extends State<AddContactScreen> {
   }
 
   void saveContact(context) async {
-    await BlocProvider.of<ContactManagerCubit>(context).uploadConatct(
+    await BlocProvider.of<ContactManagerCubit>(context).updateConatct(
         entity: ContactEntity(
             firstName: _firstNameController.text,
             lastName: _lastNameController.text,
